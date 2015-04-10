@@ -1,17 +1,17 @@
-# excel-macro-extractor
+# Excel Macro Extrator
 
-Windows Command Line application to extract .vba-files from .xlsm-files.
+Windows Command Line application to extract `.vba`-files from `.xlsm`-files.
 
 ## Usage:
 
 ~~~ sh
-$ ExcelMacroExtrator.exe xlsmfile targetpath [--with-xlsm]
+$ ExcelMacroExtrator.exe file targetdir [--copy-xlsm]
 
 # example
-$ ExcelMacroExtrator.exe C:\Users\tim\Desktop\File.xslm C:\Users\tim\File-Source --with-xlsm
+$ ExcelMacroExtrator.exe "C:\Dev\File.xslm" "C:\Dev\File-Source" --copy-xlsm
 ~~~
 
-The `--with-xlsm`-option copies the Excel-file to the `targetpath` as well. 
+The `--copy-xlsm`-option copies the Excel-file to the `targetpath` as well. 
 
 ## Motivation
 

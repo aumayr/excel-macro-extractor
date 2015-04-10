@@ -13,14 +13,14 @@ namespace ExcelMacroExtrator
         {
             if (args.Length < 2 || args.Length > 3)
             {
-                Console.WriteLine("Usage: excelmacroextractor.exe xlsmfile targetdir [--with-xlsm]");
+                Console.WriteLine("Usage: excelmacroextractor.exe file targetdir [--copy-xlsm]");
                 return;
             }
 
             ExcelExtractor excelExtr = new ExcelExtractor();
             excelExtr.ExtractMacrosFromXLSM(args[0], args[1]);
 
-            if (args.Length == 3 && args[2] == "--with-xlsm")
+            if (args.Length == 3 && args[2] == "--copy-xlsm")
             {
                 excelExtr.CopyXLSM(args[0], args[1]);
             }
@@ -73,6 +73,8 @@ namespace ExcelMacroExtrator
                     File.WriteAllText(targetPath + @"\" + comp.Name + @".vba", composedFile, Encoding.UTF8);
                 }
             }
+
+            Console.WriteLine();
 
             workBook.Close(false);
         }
